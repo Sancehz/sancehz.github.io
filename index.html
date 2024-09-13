@@ -1,86 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head><title>Leaflet Essentials</title>
-<link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-</head>
-<body>
-<script src="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-<!-- <script src="https://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script> -->
-
-<div id="map" style="width: 100vw; height: 100vh"></div>
-
-<img id="tec-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Firma_TEC.svg/1200px-Firma_TEC.svg.png" alt="TEC CR">
-
-<style>
-
-html, body {
-	margin: 0px;
-	padding: 0px;
-}
-
-#tec-logo {
-	position: fixed;
-	top: 0px;
-	margin:1rem;
-	right: 0px;
-	width: 20vw;
-
-	opacity: .5;
-	pointer-events:none;
-}
-
-</style>
-
-<script>
-
-var map = L.map(
-	'map', {
-	center: [9.86568, -83.891875],
-	zoom: 18
-	}
-);
-
-var layer1 = new L.TileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png'); 
-layer1.addTo(map);
-
-// var layer2 = new L.TileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png'); 
-// // layer2.addTo(map);
-
-// var layer3 = new L.StamenTileLayer("toner");
-// layer3.addTo(map);
-
-// Foto aerea
-// L.tileLayer.wms("http://basemap.nationalmap.gov/ArcGIS/services/USGSImageryTopo/MapServer/WMSServer", {
-// 	layers:'0',
-// 	format: 'image/png',
-// 	transparent: true,
-// 	attribution: "USGS"
-// }).addTo(map);
-
-// Mapa de clima
-// L.tileLayer.wms("http://nowcoast.noaa.gov/wms/com.esri.wms.Esrimap/obs", {
-// 	layers: 'RAS_RIDGE_NEXRAD',
-// 	format: 'image/png',
-// 	transparent: true,
-// 	attribution: "NOAA/NWS"
-// }).addTo(map);
-
-L.marker([9.86568, -83.891875], {
-	title: "Condominio Florencia", 
-	alt: "Condominio Florencia",
-	draggable: false,
-}).addTo(map);
-
-// L.polyline(
-// 	[[35.10418, -106.62987],[35.19738, -106.875],[35.07946, -106.80634]], 
-// 	{color:'teal',weight:4, opacity: 1}
-// ).addTo(map);
-
-// L.polygon(
-// 	[[35.10418, -106.62987],[35.19738, -106.875],[35.07946, -106.80634]], 
-// 	{color:'teal',weight:8, fillColor: "teal", fillOpacity: .5}
-// ).addTo(map);
-
-</script>
-</body>
+	<head>
+		<title>Condominio Florencia - SIG TEC</title>
+		<link rel="stylesheet" href="leaflet/leaflet.css"/>
+		<link rel="stylesheet" href="style.css"/>
+		<script defer src="leaflet/leaflet.js"></script>
+		<script defer src="main.js"></script>
+	</head>
+	<body>
+		<div id="map" style="width: 100vw; height: 100vh"></div>
+		<img id="tec-logo" src="imagenes/logotec.png" alt="TEC CR">
+	</body>
 </html>
