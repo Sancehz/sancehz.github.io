@@ -138,6 +138,10 @@ svg {
 
 #show-icono {
 	display: block;
+	background-image: url(imagenes/settings.png);
+	border:0;
+	outline: none;
+
 	position:absolute;
 	margin: 0;
 	right: 0px;
@@ -148,8 +152,15 @@ svg {
 	pointer-events: none;
 	image-rendering: pixelated;
 
-	transition: transform .6s;
+	transition: transform .6s, background-image .4s allow-discrete;
+
 }
+
+#show-opciones:hover + #show-icono {
+	transform: rotate(90deg) scale(1.1);
+}
+
 #show-opciones:checked + #show-icono {
 	transform: rotate(360deg);
+	background-image: url(imagenes/close.png);
 }
