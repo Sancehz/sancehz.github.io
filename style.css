@@ -13,3 +13,33 @@ html, body {
 	opacity: .5;
 	pointer-events:none;
 }
+
+svg {
+	shape-rendering: crispEdges;
+	image-rendering: pixelated;
+}
+
+#map {
+	background-color: #f0f0f0;
+
+	image-rendering: pixelated;
+}
+
+#map .leaflet-div-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* white-space: nowrap; */
+	overflow: visible;
+
+	border: 0;
+	padding: 0;
+}
+
+#map .leaflet-div-icon p {
+	text-align: center;
+	font-weight: 900;
+	font-family: consolas;
+	color:white;
+	text-shadow: 0px 1.5px 0 gray;
+}
