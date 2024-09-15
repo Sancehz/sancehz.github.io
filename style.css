@@ -43,3 +43,113 @@ svg {
 	color:white;
 	text-shadow: 0px 1.5px 0 gray;
 }
+
+#opciones {
+	position:fixed;
+	background-color: white;
+	border:2px solid gray;
+	border-radius: 0 .5rem .5rem 0;
+
+	padding:0;
+
+	bottom:1rem;
+	left:-14rem;
+
+	width:16rem;
+	height:2rem;
+
+	overflow:hidden;
+
+	transition: height .2s, left .2s .2s;
+}
+
+#opciones p {
+	opacity: 0;
+	margin-left: 1.5rem;
+	font-family: consolas;
+	color: gray;
+	transition: opacity .3s;
+	pointer-events: none;
+
+	input {
+		vertical-align: text-bottom;
+		pointer-events: all;
+	}
+}
+
+#opciones h1 {
+	font-family: consolas;
+	color:#686868;
+	font-size: 1.1rem;
+	margin-left: 1.5rem;
+}
+
+#opciones button {
+	width: 13.8rem;
+	font-family: consolas;
+	font-size: 1rem;
+	margin-left: 1.5rem;
+	color:white;
+	background-color: rgb(177, 177, 177);
+	border: none;
+	border-radius: .2rem;
+}
+
+#opciones button:hover {
+	background-color: gray;
+}
+#opciones button:active {
+	background-color: rgb(51, 50, 50);
+}
+
+#opciones:has(#show-opciones:checked) {
+	height:10rem;
+	left:-1rem;
+
+	transition: height .2s .2s, left .2s;
+
+	p {
+		opacity: 1;
+	}
+}
+
+
+@media screen and (max-width: 16rem) {
+	#opciones {visibility: hidden;}
+}
+
+#opciones div {
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+}
+
+#show-opciones {
+	position:absolute;
+	margin: 0;
+	right: 0px;
+	top: 0px;
+	width: 2rem;
+	height: 2rem;
+
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+#show-icono {
+	display: block;
+	position:absolute;
+	margin: 0;
+	right: 0px;
+	top: 0px;
+	width: 2rem;
+	height: 2rem;
+	content: ">";
+	pointer-events: none;
+	image-rendering: pixelated;
+
+	transition: transform .6s;
+}
+#show-opciones:checked + #show-icono {
+	transform: rotate(360deg);
+}

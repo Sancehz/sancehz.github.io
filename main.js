@@ -5,6 +5,21 @@ var map = L.map(
 	}
 );
 
+
+var urlParams = new URLSearchParams(window.location.search);
+var settings = {
+	autores:(urlParams.get("autores") != undefined),
+	markers:!(urlParams.get("noMarkers") != undefined),
+	areaIconos:!(urlParams.get("noAreaIconos") != undefined),
+}
+
+// modificamos los checkboxes de settings
+document.getElementById("check-autores").checked = settings.autores;
+document.getElementById("check-markers").checked = settings.markers;
+document.getElementById("check-iconos").checked = settings.areaIconos;
+
+console.log(urlParams);
+
 function formatoMapa(feature) {
 	if(feature.geometry.type == "Point")
 		return {};
@@ -44,7 +59,7 @@ function formatoPolys(f) {
 
 	const styles = {
 		// landuse
-		residential: {color:"#e0e0e0", weight:2, bgOp:1},
+		residential: {color:"#0eaf9b", weight:2, bgOp:.1},
 		grass: {color:"green", icon:"grass.png", weight:1, bgOp:.1, dashes:"20,20"},
 		farmland: {color:"brown", icon:"farmland.png", weight:1, bgOp:.1, dashes:"20,20"},
 
@@ -70,13 +85,26 @@ function formatoPolys(f) {
 
 	var myStyle = styles[llave] ?? {color:"gray", weight:2};
 
+	if(settings.autores) { // modificamos si se quieren ver los autores
+		myStyle.icon = undefined;
+		myStyle.bgOp = undefined;
+		myStyle.color = "gray";
+		switch(f.properties.user) {
+			case "0980snchz":
+				myStyle.color = "#0eaf9b"; break;
+			case "Krissia_21":
+				myStyle.color = "#f04f78"; break;
+		}
+	}
+
 	// los asignamos basado en algunas condiciones
 	style.color = myStyle.color;
 	style.fillColor = myStyle.color;
 	style.weight = myStyle.weight;
 	style.dashArray = myStyle.dashes;
 
-	if(myStyle.icon != undefined)
+
+	if(myStyle.icon != undefined && settings.areaIconos)
 		style.fill = `url(polyicos/${ myStyle.icon })`;
 
 	if(myStyle.bgOp != undefined)
@@ -99,13 +127,17 @@ function modifFeatures(f,l) {
 
 	// tenemos que agregar los iconos manualmente porque leaflet me odia
 	else if(f.geometry.type == "Point") {
-		console.log(formatoPuntos(f));
-		console.log(f.geometry.type, f.properties);
+		// console.log(formatoPuntos(f));
+		// console.log(f.geometry.type, f.properties);
 		l.options.icon = formatoPuntos(f);
 		l.options.title = f.properties.name;
 
 		if(f.properties.name != undefined)
 			l.bindPopup(f.properties.name);
+
+		if(!settings.markers) {
+			l.options.opacity = 0;
+		}
 	}
 }
 
@@ -150,3 +182,21 @@ map.on("zoomend", ()=>{
 	if(map.getZoom() < 19) map.removeLayer(labelsLayer);
 	else labelsLayer.addTo(map);
 })
+
+function aplicarSettings() {
+	console.log("aplicando...");
+	console.log(window.location.search)
+
+	var checkAutores = document.getElementById("check-autores").checked;
+	var checkMarkers = document.getElementById("check-markers").checked;
+	var checkIconos = document.getElementById("check-iconos").checked;
+
+	var strSearch = "";
+	strSearch += checkAutores? "autores&" : "";
+	strSearch += checkMarkers? "" : "noMarkers&";
+	strSearch += checkIconos? "" : "noAreaIconos&";
+
+	console.log(strSearch);
+
+	window.location.search = strSearch;
+}

@@ -3,17 +3,32 @@
 	<head>
 		<title>Condominio Florencia - SIG TEC</title>
 		<link rel="stylesheet" href="leaflet/leaflet.css"/>
-		<link rel="stylesheet" href="style.css?v=1"/>
+		<link rel="stylesheet" href="style.css?v=2"/>
 		<script defer src="leaflet/leaflet.js"></script>
 
 		<!-- Esta extension nos permite utilizar imagenes para llenar areas-->
-		<script defer src="leaflet/leaflet-polygon.fillPattern.js?v=1"></script>
+		<script defer src="leaflet/leaflet-polygon.fillPattern.js?v=2"></script>
 		<!-- <script defer src="leaflet/leaflet.label.js"></script> -->
 
-		<script defer src="main.js?v=1"></script>
+		<script defer src="main.js?v=2"></script>
 	</head>
 	<body>
 		<div id="map" style="width: 100vw; height: 100vh"></div>
 		<img id="tec-logo" src="imagenes/logotec.png" alt="TEC CR">
+
+		<div id="opciones">
+			<div>
+				<input type="checkbox" id="show-opciones">
+				<img id="show-icono" src="imagenes/settings.png">
+			</div>
+			<h1>Opciones</h1>
+			<p>
+				- Mostrar markers: <input id="check-markers" type="checkbox"><br>
+				- Mostrar iconos : <input id="check-iconos" type="checkbox"><br>
+				- Mostrar autores: <input id="check-autores" type="checkbox"><br>
+			</p>
+
+			<button onclick="aplicarSettings()">Aplicar</button>
+		</div>
 	</body>
 </html>
