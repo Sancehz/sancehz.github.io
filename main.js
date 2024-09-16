@@ -133,7 +133,9 @@ function modifFeatures(f,l) {
 		l.options.title = f.properties.name;
 
 		if(f.properties.name != undefined)
-			l.bindPopup(f.properties.name);
+			l.bindPopup(f.properties.name, {offset:[0,-32]});
+			l.on("mouseover", function(){this.openPopup()});
+			l.on("mouseout", function(){this.closePopup()});
 
 		if(!settings.markers) {
 			l.options.opacity = 0;
