@@ -38,6 +38,7 @@ function formatoPolys(f) {
 		residential: {color:"#0eaf9b", weight:2, bgOp:.1},
 		grass: {color:"green", icon:"grass.png", weight:1, bgOp:.1, dashes:"20,20"},
 		farmland: {color:"brown", icon:"farmland.png", weight:1, bgOp:.1, dashes:"20,20"},
+		construction: {color:"gray", icon:"construction.png", weight:1, bgOp:.2, dashes:"20,20"},
 		
 		// building
 		house: {color:"#cf657f", weight:2, bgOp:.4},
@@ -119,23 +120,29 @@ function modifFeatures(f,l) {
 	}
 }
 
+const pixelIcoSize = 40;
+var pixelIcono = L.Icon.extend({options:{
+	iconSize:[pixelIcoSize,pixelIcoSize], 
+	iconAnchor:[pixelIcoSize/2,pixelIcoSize],
+}})
+
 // Llamada para cada punto en el mapa, busca su icono correspondiente 
 // (si no existe default a dog_park porque se ve chistoso)
 function iconoPuntos(f) {
 	const markIconos = {
 		// agua
-		storage_tank: L.icon({iconUrl:"markers/water_tank.png", iconSize:[32,32], iconAnchor:[16,32]}),
-		wastewater_plant: L.icon({iconUrl:"markers/water_treatment.png", iconSize:[32,32], iconAnchor:[16,32]}),
-		water_well: L.icon({iconUrl:"markers/water_well.png", iconSize:[32,32], iconAnchor:[16,32]}),
+		storage_tank: new pixelIcono({iconUrl:"markers/water_tank.png"}),
+		wastewater_plant: new pixelIcono({iconUrl:"markers/water_treatment.png"}),
+		water_well: new pixelIcono({iconUrl:"markers/water_well.png"}),
 	
 		// postes de luz
-		mast: L.icon({iconUrl:"markers/light.png", iconSize:[32,32], iconAnchor:[16,32]}),
+		mast: L.icon({iconUrl:"markers/light.png", iconSize:[50,50], iconAnchor:[25,50]}),
 	
 		// edificios
-		place_of_worship: L.icon({iconUrl:"markers/church.png", iconSize:[32,32], iconAnchor:[16,32]}),
-		park: L.icon({iconUrl:"markers/park.png", iconSize:[32,32], iconAnchor:[16,32]}),
-		dog_park: L.icon({iconUrl:"markers/dog_park.png", iconSize:[32,32], iconAnchor:[16,32]}),
-		pitch: L.icon({iconUrl:"markers/leisure.png", iconSize:[32,32], iconAnchor:[16,32]}),
+		place_of_worship: new pixelIcono({iconUrl:"markers/church.png"}),
+		park: new pixelIcono({iconUrl:"markers/park.png"}),
+		dog_park: new pixelIcono({iconUrl:"markers/dog_park.png"}),
+		pitch: new pixelIcono({iconUrl:"markers/leisure.png"}),
 	};
 
 	let style = {};

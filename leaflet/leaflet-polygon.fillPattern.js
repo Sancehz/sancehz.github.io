@@ -30,23 +30,23 @@ if (L.Browser.svg) {
                 _p.setAttribute('x', '0');
                 _p.setAttribute('y', '0');
                 _p.setAttribute('patternUnits', 'userSpaceOnUse');
-                _p.setAttribute('width', '24');
-                _p.setAttribute('height', '24');
+                _p.setAttribute('width', '32');
+                _p.setAttribute('height', '32');
                 this._defs.appendChild(_p);
 
                 var _img = this._createElement('image');
                 _img.setAttribute('x', '0');
                 _img.setAttribute('y', '0');
                 _img.setAttributeNS('http://www.w3.org/1999/xlink', 'href', _img_url);
-                _img.setAttribute('width', '24');
-                _img.setAttribute('height', '24');
+                _img.setAttribute('width', '32');
+                _img.setAttribute('height', '32');
                 _p.appendChild(_img);
 
                 _im.onload = function() {
-                    _p.setAttribute('width', _im.width);
-                    _p.setAttribute('height', _im.height);
-                    _img.setAttribute('width', _im.width);
-                    _img.setAttribute('height', _im.height);
+                    _p.setAttribute('width', _im.width * 1.2);
+                    _p.setAttribute('height', _im.height * 1.2);
+                    _img.setAttribute('width', _im.width * 1.2);
+                    _img.setAttribute('height', _im.height * 1.2);
                 };
             }
             this._path.setAttribute('fill', "url(#"+_ref_id+")");
