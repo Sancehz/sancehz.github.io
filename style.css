@@ -71,10 +71,18 @@ svg {
 	transition: opacity .3s;
 	pointer-events: none;
 
+	span {
+		cursor:help;
+		pointer-events: all;
+
+	}
 	input {
+		cursor: pointer;
 		vertical-align: text-bottom;
 		pointer-events: all;
 	}
+
+
 }
 
 #opciones h1 {
