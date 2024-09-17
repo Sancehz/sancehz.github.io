@@ -143,13 +143,19 @@ function iconoPuntos(f) {
 		park: new pixelIcono({iconUrl:"markers/park.png"}),
 		dog_park: new pixelIcono({iconUrl:"markers/dog_park.png"}),
 		pitch: new pixelIcono({iconUrl:"markers/leisure.png"}),
+
+		// place
+		neighbourhood: new pixelIcono({iconUrl:"markers/neighborhood.png"}),
+
+
+		default: new pixelIcono({iconUrl:"markers/default.png"}),
 	};
 
 	let style = {};
 	// sacamos los datos que existan dependiendo del tipo de punto
 	let llave = f.properties.building ?? f.properties.leisure ?? 
-				f.properties.amenity ?? f.properties.man_made;
+				f.properties.amenity ?? f.properties.man_made ?? f.properties.place;
 
 	style.icon = markIconos[llave];
-	return style.icon ?? markIconos.dog_park;
+	return style.icon ?? markIconos.default;
 }
