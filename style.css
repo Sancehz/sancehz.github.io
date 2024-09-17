@@ -1,14 +1,18 @@
 html, body {
+	/* para que quepa todo el mapa */
 	margin: 0px;
 	padding: 0px;
 }
 
+
+/* GENERAL */
 #tec-logo {
 	position: fixed;
 	top: 0px;
-	margin:1rem;
 	right: 0px;
+
 	width: 20vw;
+	margin:1rem;
 
 	opacity: .5;
 	pointer-events:none;
@@ -18,98 +22,107 @@ svg {
 	shape-rendering: crispEdges;
 	image-rendering: pixelated;
 }
-
 #map {
 	background-color: #f0f0f0;
-
 	image-rendering: pixelated;
 }
 
+/* DIVICONS */
 #map .leaflet-div-icon {
 	display: flex;
-	justify-content: center;
+	
+	justify-content: center; 
 	align-items: center;
-	/* white-space: nowrap; */
-	overflow: visible;
-
 	border: 0;
 	padding: 0;
+	overflow: visible;
+	
+	& p {
+		color:white;
+		font-weight: 900;
+		font-family: consolas;
+
+		text-align: center;
+		text-shadow: 0px 1.5px 0 gray;
+	}
 }
 
-#map .leaflet-div-icon p {
-	text-align: center;
-	font-weight: 900;
-	font-family: consolas;
-	color:white;
-	text-shadow: 0px 1.5px 0 gray;
-}
-
+/* TAB DE OPCIONES */
 #opciones {
 	position:fixed;
-	background-color: white;
-	border:2px solid gray;
-	border-radius: 0 .5rem .5rem 0;
-
-	padding:0;
-
 	bottom:1rem;
 	left:-14rem;
 
 	width:16rem;
 	height:2rem;
-
+	padding:0;
 	overflow:hidden;
+	
+	background-color: white;
+	border:2px solid gray;
+	border-radius: 0 .5rem .5rem 0;
 
+	/* animacion de cerrar */
 	transition: height .2s, left .2s .2s;
+
+	/* Tiene un wrapper porque me da pereza ordenarlo bien */
+	div {
+		position: relative;
+		margin: 0px;
+		padding: 0px;
+	}	
 }
 
 #opciones p {
-	opacity: 0;
 	margin-left: 1.5rem;
-	font-family: consolas;
+
 	color: gray;
-	transition: opacity .3s;
+	opacity: 0;
+	font-family: consolas;
 	pointer-events: none;
+	
+	transition: opacity .3s;
 
 	span {
 		cursor:help;
 		pointer-events: all;
-
 	}
 	input {
-		cursor: pointer;
 		vertical-align: text-bottom;
+		cursor: pointer;
 		pointer-events: all;
 	}
-
-
 }
 
 #opciones h1 {
-	font-family: consolas;
-	color:#686868;
-	font-size: 1.1rem;
 	margin-left: 1.5rem;
+
+	color:#686868;
+	font-family: consolas;
+	font-size: 1.1rem;
 }
 
 #opciones button {
 	width: 13.8rem;
-	font-family: consolas;
-	font-size: 1rem;
 	margin-left: 1.5rem;
+
 	color:white;
 	background-color: rgb(177, 177, 177);
+	font-size: 1rem;
+	font-family: consolas;
 	border: none;
 	border-radius: .2rem;
+	
+	&:hover {
+		background-color: gray;
+	}
+
+	&:active {
+		background-color: rgb(51, 50, 50);
+	}
 }
 
-#opciones button:hover {
-	background-color: gray;
-}
-#opciones button:active {
-	background-color: rgb(51, 50, 50);
-}
-
+/* animaciones cuando hace check */
 #opciones:has(#show-opciones:checked) {
 	height:10rem;
 	left:-1rem;
@@ -121,22 +134,18 @@ svg {
 	}
 }
 
-
+/* si no cabe no lo mostramos */
 @media screen and (max-width: 16rem) {
 	#opciones {visibility: hidden;}
 }
 
-#opciones div {
-	position: relative;
-	margin: 0px;
-	padding: 0px;
-}
-
+/* checkbox */
 #show-opciones {
 	position:absolute;
-	margin: 0;
 	right: 0px;
 	top: 0px;
+
+	margin: 0;
 	width: 2rem;
 	height: 2rem;
 
@@ -144,31 +153,32 @@ svg {
 	appearance: none;
 }
 
-#show-icono {
-	display: block;
-	background-image: url(imagenes/settings.png);
-	border:0;
-	outline: none;
-
-	position:absolute;
-	margin: 0;
-	right: 0px;
-	top: 0px;
-	width: 2rem;
-	height: 2rem;
-	content: ">";
-	pointer-events: none;
-	image-rendering: pixelated;
-
-	transition: transform .6s, background-image .4s allow-discrete;
-
-}
-
+/* anims */
 #show-opciones:hover + #show-icono {
 	transform: rotate(90deg) scale(1.1);
 }
-
 #show-opciones:checked + #show-icono {
 	transform: rotate(360deg);
 	background-image: url(imagenes/close.png);
+}
+
+#show-icono {
+	position:absolute;
+	right: 0px;
+	top: 0px;
+
+	display: block;
+	margin: 0;
+	width: 2rem;
+	height: 2rem;
+
+	border:0;
+	outline: none;
+	background-image: url(imagenes/settings.png);
+
+	pointer-events: none;
+	image-rendering: pixelated;
+
+	/* Animar el giro cool cuando se abre / cierra */
+	transition: transform .6s, background-image .4s allow-discrete;
 }
