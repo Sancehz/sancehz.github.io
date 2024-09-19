@@ -6440,6 +6440,218 @@
         },
         {
             "type": "Feature",
+            "id": "way/1316561184",
+            "properties": {
+                "timestamp": "2024-09-19T03:53:12Z",
+                "version": "1",
+                "changeset": "156800369",
+                "user": "0980snchz",
+                "uid": "21931354",
+                "building": "house",
+                "name": "A9",
+                "id": "way/1316561184"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -83.8922156,
+                            9.8655545
+                        ],
+                        [
+                            -83.8921924,
+                            9.8655421
+                        ],
+                        [
+                            -83.8921138,
+                            9.8654999
+                        ],
+                        [
+                            -83.8920836,
+                            9.8655619
+                        ],
+                        [
+                            -83.8921622,
+                            9.8656041
+                        ],
+                        [
+                            -83.8921785,
+                            9.8655707
+                        ],
+                        [
+                            -83.8922026,
+                            9.8655822
+                        ],
+                        [
+                            -83.8922156,
+                            9.8655545
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "way/1316561185",
+            "properties": {
+                "timestamp": "2024-09-19T03:53:12Z",
+                "version": "1",
+                "changeset": "156800369",
+                "user": "0980snchz",
+                "uid": "21931354",
+                "building": "house",
+                "name": "A10",
+                "id": "way/1316561185"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -83.8922448,
+                            9.8654938
+                        ],
+                        [
+                            -83.8922233,
+                            9.8654823
+                        ],
+                        [
+                            -83.8921429,
+                            9.8654392
+                        ],
+                        [
+                            -83.8921138,
+                            9.8654999
+                        ],
+                        [
+                            -83.8921924,
+                            9.8655421
+                        ],
+                        [
+                            -83.8922077,
+                            9.8655101
+                        ],
+                        [
+                            -83.8922318,
+                            9.8655216
+                        ],
+                        [
+                            -83.8922448,
+                            9.8654938
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "way/1316561186",
+            "properties": {
+                "timestamp": "2024-09-19T03:53:12Z",
+                "version": "1",
+                "changeset": "156800369",
+                "user": "0980snchz",
+                "uid": "21931354",
+                "building": "house",
+                "name": "A11",
+                "id": "way/1316561186"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -83.8922756,
+                            9.8654352
+                        ],
+                        [
+                            -83.892252,
+                            9.8654226
+                        ],
+                        [
+                            -83.8921737,
+                            9.8653806
+                        ],
+                        [
+                            -83.8921429,
+                            9.8654392
+                        ],
+                        [
+                            -83.8922233,
+                            9.8654823
+                        ],
+                        [
+                            -83.8922385,
+                            9.8654514
+                        ],
+                        [
+                            -83.8922603,
+                            9.8654633
+                        ],
+                        [
+                            -83.8922756,
+                            9.8654352
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "way/1316561187",
+            "properties": {
+                "timestamp": "2024-09-19T03:53:12Z",
+                "version": "1",
+                "changeset": "156800369",
+                "user": "0980snchz",
+                "uid": "21931354",
+                "building": "house",
+                "name": "A12",
+                "id": "way/1316561187"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -83.8923051,
+                            9.8653739
+                        ],
+                        [
+                            -83.8922827,
+                            9.8653619
+                        ],
+                        [
+                            -83.8922068,
+                            9.8653206
+                        ],
+                        [
+                            -83.8921737,
+                            9.8653806
+                        ],
+                        [
+                            -83.892252,
+                            9.8654226
+                        ],
+                        [
+                            -83.892268,
+                            9.8653902
+                        ],
+                        [
+                            -83.8922921,
+                            9.8654017
+                        ],
+                        [
+                            -83.8923051,
+                            9.8653739
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
             "id": "way/107704492",
             "properties": {
                 "timestamp": "2019-04-02T00:23:52Z",
@@ -6538,6 +6750,46 @@
                     [
                         -83.8940751,
                         9.8623232
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "way/155331171",
+            "properties": {
+                "timestamp": "2019-04-02T00:23:53Z",
+                "version": "5",
+                "changeset": "68773407",
+                "user": "Ned_Stark",
+                "uid": "8988225",
+                "highway": "residential",
+                "noname": "yes",
+                "surface": "asphalt",
+                "id": "way/155331171"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -83.894583,
+                        9.8677662
+                    ],
+                    [
+                        -83.894756,
+                        9.8679585
+                    ],
+                    [
+                        -83.8949121,
+                        9.8681502
+                    ],
+                    [
+                        -83.8950155,
+                        9.86824
+                    ],
+                    [
+                        -83.8951637,
+                        9.8683443
                     ]
                 ]
             }
@@ -7509,6 +7761,58 @@
                     [
                         -83.8931256,
                         9.8678852
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "way/883955557",
+            "properties": {
+                "timestamp": "2020-12-11T21:55:30Z",
+                "version": "1",
+                "changeset": "95705106",
+                "user": "SergiNavas16",
+                "uid": "10228232",
+                "highway": "residential",
+                "id": "way/883955557"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -83.8893378,
+                        9.8648827
+                    ],
+                    [
+                        -83.888883,
+                        9.864851
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "way/883955558",
+            "properties": {
+                "timestamp": "2020-12-11T21:55:30Z",
+                "version": "1",
+                "changeset": "95705106",
+                "user": "SergiNavas16",
+                "uid": "10228232",
+                "highway": "residential",
+                "id": "way/883955558"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -83.8892696,
+                        9.8646505
+                    ],
+                    [
+                        -83.8893092,
+                        9.8641208
                     ]
                 ]
             }
@@ -8539,6 +8843,132 @@
                 "coordinates": [
                     -83.892474,
                     9.8677628
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "node/12185310681",
+            "properties": {
+                "timestamp": "2024-09-19T03:53:12Z",
+                "version": "1",
+                "changeset": "156800369",
+                "user": "0980snchz",
+                "uid": "21931354",
+                "man_made": "mast",
+                "tower:type": "lighting",
+                "id": "node/12185310681"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.8926176,
+                    9.8659915
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "node/12185310682",
+            "properties": {
+                "timestamp": "2024-09-19T03:53:12Z",
+                "version": "1",
+                "changeset": "156800369",
+                "user": "0980snchz",
+                "uid": "21931354",
+                "man_made": "mast",
+                "tower:type": "lighting",
+                "id": "node/12185310682"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.8926176,
+                    9.8658069
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "node/12185310683",
+            "properties": {
+                "timestamp": "2024-09-19T03:53:12Z",
+                "version": "1",
+                "changeset": "156800369",
+                "user": "0980snchz",
+                "uid": "21931354",
+                "man_made": "mast",
+                "tower:type": "lighting",
+                "id": "node/12185310683"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.8924836,
+                    9.8657353
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "node/12185310684",
+            "properties": {
+                "timestamp": "2024-09-19T03:53:12Z",
+                "version": "1",
+                "changeset": "156800369",
+                "user": "0980snchz",
+                "uid": "21931354",
+                "man_made": "mast",
+                "tower:type": "lighting",
+                "id": "node/12185310684"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.8928259,
+                    9.8661951
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "node/12185310685",
+            "properties": {
+                "timestamp": "2024-09-19T03:53:12Z",
+                "version": "1",
+                "changeset": "156800369",
+                "user": "0980snchz",
+                "uid": "21931354",
+                "man_made": "mast",
+                "tower:type": "lighting",
+                "id": "node/12185310685"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.8928437,
+                    9.8659787
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "node/12185310686",
+            "properties": {
+                "timestamp": "2024-09-19T03:53:12Z",
+                "version": "1",
+                "changeset": "156800369",
+                "user": "0980snchz",
+                "uid": "21931354",
+                "man_made": "mast",
+                "tower:type": "lighting",
+                "id": "node/12185310686"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.892863,
+                    9.8657592
                 ]
             }
         },
