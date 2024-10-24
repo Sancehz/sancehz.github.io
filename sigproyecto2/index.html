@@ -1,1 +1,42 @@
-<p>Prueba Proyecto 2</p>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mapas de temblores - SIG TEC</title>
+		<link rel="icon" type="image/x-icon" href="/imagenes/favicon.png">
+
+		<link rel="stylesheet" href="leaflet/leaflet.css"/>
+		<link rel="stylesheet" href="style.css?v=7"/>
+		<script defer src="leaflet/leaflet.js"></script>
+
+		<!-- Esta extension nos permite utilizar imagenes para llenar areas-->
+		<script defer src="leaflet/leaflet-polygon.fillPattern.js?v=7"></script>
+
+		<script defer src="crearMapa.js?v=7"></script> <!--Contiene la mayoria de mi codigo-->
+		<script defer src="main.js?v=7"></script>
+	</head>
+	<body>
+		<div id="map" style="width: 100vw; height: 100vh"></div>
+		<img id="tec-logo" src="imagenes/logotec.png" alt="TEC - CR">
+
+		<!-- Barra de opciones -->
+		<div id="opciones">
+			<div>
+				<input type="checkbox" id="show-opciones">
+				<span id="show-icono">
+			</div>
+			<h1>Opciones</h1>
+			<p>
+				<span title="Mostrar markers para postes de luz, parques, edificios, etc.">
+					- Mostrar markers: <input id="check-markers" type="checkbox">
+				</span><br>
+				<span title="Mostrar textura / iconos dentro de las areas">
+					- Mostrar iconos : <input id="check-iconos" type="checkbox">
+				</span><br>
+				<span title="Mostrar colores diferentes para el ultimo editor de cada elemento &#13; - Remueve los iconos de area">
+					- Mostrar editores: <input id="check-autores" type="checkbox">
+				</span><br>
+			</p>
+			<button onclick="aplicarSettings()">Aplicar</button>
+		</div>
+	</body>
+</html>
