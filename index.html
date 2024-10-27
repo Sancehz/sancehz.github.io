@@ -1,83 +1,42 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Mapas de temblores - SIG TEC</title>
-		<link rel="icon" type="image/x-icon" href="/sigproyecto2/imagenes/favicon.png">
+		<title>Condominio Florencia - SIG TEC</title>
+		<link rel="icon" type="image/x-icon" href="/imagenes/favicon.png">
 
-		<link rel="stylesheet" href="/sigproyecto2/leaflet/leaflet.css"/>
-		<link rel="stylesheet" href="/sigproyecto2/style.css?v=10"/>
-		<script defer src="/sigproyecto2/leaflet/leaflet.js"></script>
+		<link rel="stylesheet" href="leaflet/leaflet.css"/>
+		<link rel="stylesheet" href="style.css?v=7"/>
+		<script defer src="leaflet/leaflet.js"></script>
 
 		<!-- Esta extension nos permite utilizar imagenes para llenar areas-->
-		<!-- <script defer src="leaflet/leaflet-polygon.fillPattern.js?v=7"></script> -->
+		<script defer src="leaflet/leaflet-polygon.fillPattern.js?v=7"></script>
 
-		<script defer src="/sigproyecto2/crearMapa.js?v=10"></script> <!--Contiene la mayoria de mi codigo-->
-		<script defer src="/sigproyecto2/main.js?v=10"></script>
+		<script defer src="crearMapa.js?v=7"></script> <!--Contiene la mayoria de mi codigo-->
+		<script defer src="main.js?v=7"></script>
 	</head>
 	<body>
-		<img id="tec-logo" src="/sigproyecto2/imagenes/logotec.png" alt="TEC - CR">
-		<div class="content-wrapper">
+		<div id="map" style="width: 100vw; height: 100vh"></div>
+		<img id="tec-logo" src="imagenes/logotec.png" alt="TEC - CR">
 
-			<div class="map-wrapper">
-				<div id="map" style="height:100%; width:100%;"></div>
+		<!-- Barra de opciones -->
+		<div id="opciones">
+			<div>
+				<input type="checkbox" id="show-opciones">
+				<span id="show-icono">
 			</div>
-			
-			<!-- Barra de opciones -->
-			<!-- <div id="opciones">
-				<div>
-					<input type="checkbox" id="show-opciones" checked>
-					<span id="show-icono">
-				</div>
-				<h1>Opciones</h1>
-				<p>
-					<span title="Mostrar markers para escuelas y gasolineras">
-						- Mostrar markers: <input id="check-markers" type="checkbox">
-					</span><br>
-					<span title="Mostrar textura / iconos dentro de las areas">
-						- Mostrar iconos : <input id="check-iconos" type="checkbox">
-					</span><br>
-					<span title="Mostrar colores diferentes para el ultimo editor de cada elemento &#13; - Remueve los iconos de area">
-						- Mostrar editores: <input id="check-autores" type="checkbox">
-					</span><br>
-				</p>
-				<button onclick="aplicarSettings()">Aplicar</button>
-			</div> -->
-
-			<div id="mapas-tab">
-				<div class="mapas-tab-show-wrapper">
-					<span>Mapas</span>
-					<input type="checkbox" id="show-mapas" checked>
-					<a href="/sigproyecto2/Datos.zip" download>Descargar analisis...</a>
-				</div>
-
-				<div class="mapas-tab-opciones-wrapper">
-					<div class="opcion-mapa">
-						<img src="/sigproyecto2/imagenes/fallamiento_local_btn.png" alt="" style="background-color: #be9290;">
-						<span>Fallamiento local</span>
-						<input type="radio" name="mapa-opciones" value="fallamiento" onclick="cambiarMapa()" checked>
-					</div>
-
-					<div class="opcion-mapa">
-						<img src="/sigproyecto2/imagenes/subduccion_btn.png" alt="" style="background-color: #90b0be;">
-						<span>Zonas de subduccion</span>
-						<input type="radio" name="mapa-opciones" value="subduccion" onclick="cambiarMapa()">
-					</div>
-
-					<div class="opcion-mapa">
-						<img src="/sigproyecto2/imagenes/escuelas_btn.png" alt="" style="background-color: #a890be;">
-						<span>Escuelas afectadas</span>
-						<input type="radio" name="mapa-opciones" value="escuelas" onclick="cambiarMapa()">
-					</div>
-
-					<div class="opcion-mapa">
-						<img src="/sigproyecto2/imagenes/gasolineras_btn.png" alt="" style="background-color: #90be92;">
-						<span>Gasolineras afectadas</span>
-						<input type="radio" name="mapa-opciones" value="gasolineras" onclick="cambiarMapa()">
-					</div>
-				</div>
-
-			</div>
+			<h1>Opciones</h1>
+			<p>
+				<span title="Mostrar markers para postes de luz, parques, edificios, etc.">
+					- Mostrar markers: <input id="check-markers" type="checkbox">
+				</span><br>
+				<span title="Mostrar textura / iconos dentro de las areas">
+					- Mostrar iconos : <input id="check-iconos" type="checkbox">
+				</span><br>
+				<span title="Mostrar colores diferentes para el ultimo editor de cada elemento &#13; - Remueve los iconos de area">
+					- Mostrar editores: <input id="check-autores" type="checkbox">
+				</span><br>
+			</p>
+			<button onclick="aplicarSettings()">Aplicar</button>
 		</div>
 	</body>
 </html>
