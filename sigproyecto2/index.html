@@ -5,18 +5,18 @@
 		<title>Mapas de temblores - SIG TEC</title>
 		<link rel="icon" type="image/x-icon" href="/imagenes/favicon.png">
 
-		<link rel="stylesheet" href="leaflet/leaflet.css"/>
-		<link rel="stylesheet" href="style.css?v=7"/>
-		<script defer src="leaflet/leaflet.js"></script>
+		<link rel="stylesheet" href="/leaflet/leaflet.css"/>
+		<link rel="stylesheet" href="/style.css?v=10"/>
+		<script defer src="/leaflet/leaflet.js"></script>
 
 		<!-- Esta extension nos permite utilizar imagenes para llenar areas-->
 		<!-- <script defer src="leaflet/leaflet-polygon.fillPattern.js?v=7"></script> -->
 
-		<script defer src="crearMapa.js?v=7"></script> <!--Contiene la mayoria de mi codigo-->
-		<script defer src="main.js?v=7"></script>
+		<script defer src="crearMapa.js?v=10"></script> <!--Contiene la mayoria de mi codigo-->
+		<script defer src="main.js?v=10"></script>
 	</head>
 	<body>
-		<img id="tec-logo" src="imagenes/logotec.png" alt="TEC - CR">
+		<img id="tec-logo" src="/imagenes/logotec.png" alt="TEC - CR">
 		<div class="content-wrapper">
 
 			<div class="map-wrapper">
@@ -53,25 +53,25 @@
 
 				<div class="mapas-tab-opciones-wrapper">
 					<div class="opcion-mapa">
-						<img src="imagenes/fallamiento_local_btn.png" alt="" style="background-color: #be9290;">
+						<img src="/imagenes/fallamiento_local_btn.png" alt="" style="background-color: #be9290;">
 						<span>Fallamiento local</span>
 						<input type="radio" name="mapa-opciones" value="fallamiento" onclick="cambiarMapa()" checked>
 					</div>
 
 					<div class="opcion-mapa">
-						<img src="imagenes/subduccion_btn.png" alt="" style="background-color: #90b0be;">
+						<img src="/imagenes/subduccion_btn.png" alt="" style="background-color: #90b0be;">
 						<span>Zonas de subduccion</span>
 						<input type="radio" name="mapa-opciones" value="subduccion" onclick="cambiarMapa()">
 					</div>
 
 					<div class="opcion-mapa">
-						<img src="imagenes/escuelas_btn.png" alt="" style="background-color: #a890be;">
+						<img src="/imagenes/escuelas_btn.png" alt="" style="background-color: #a890be;">
 						<span>Escuelas afectadas</span>
 						<input type="radio" name="mapa-opciones" value="escuelas" onclick="cambiarMapa()">
 					</div>
 
 					<div class="opcion-mapa">
-						<img src="imagenes/gasolineras_btn.png" alt="" style="background-color: #90be92;">
+						<img src="/imagenes/gasolineras_btn.png" alt="" style="background-color: #90be92;">
 						<span>Gasolineras afectadas</span>
 						<input type="radio" name="mapa-opciones" value="gasolineras" onclick="cambiarMapa()">
 					</div>
