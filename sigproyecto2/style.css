@@ -181,7 +181,7 @@ html, body {
 
 
 	&:has(#show-mapas:checked) {
-		height: 1.5rem;
+		/* height: 1.5rem; */
 	}
 
 
