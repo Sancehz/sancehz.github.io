@@ -1,17 +1,17 @@
 /// crearmapa.js
 // Define el codigo para cargar los archivos con leaflet, y formatearlos para que ya queden asi bien bonitos
 
-async function cargarMapa() {
+async function cargarMapa(mapa, archivo) {
 	// Obtenemos el GeoJSON como archivo de texto desde la misma pagina github
 	// (para no tener que cambiar todo cada vez que actualizamos algo)
-	let response = await fetch("distritos.geo.json");
+	let response = await fetch(archivo);
 	let mapaDat = await response.text();
 
 	let pJson = JSON.parse(mapaDat); // cargamos el JSON como un objeto
 
 	// agregamos cada elemento
 	for(let feature of pJson.features) {
-		L.geoJson(feature, {style: formatoMapa, onEachFeature:modifFeatures}).addTo(map);
+		L.geoJson(feature, {style: formatoMapa, onEachFeature:modifFeatures}).addTo(mapa);
 	}
 }
 
@@ -33,13 +33,13 @@ function formatoPolys(f) {
 		// {color:"gray", icon:"construction.png", weight:1, bgOp:.2, dashes:"20,20"},
 		
 		// provincia
-		"SAN JOSE": {color: "#AFD2E9", weight: 2, bgOp: 0},
-		"ALAJUELA": {color: "#FCD0A1", weight: 2, bgOp: 0},
-		"HEREDIA": {color: "#FF817B", weight: 2, bgOp: 0},
-		"LIMON": {color: "#AAC995", weight: 2, bgOp: 0},
-		"GUANACASTE": {color: "#74B09E", weight: 2, bgOp: 0},
-		"PUNTARENAS": {color: "#FEAF91", weight: 2, bgOp: 0},
-		"CARTAGO": {color: "#A690A4", weight: 2, bgOp: 0},
+		"SAN JOSE": {color: "#AFD2E9", weight: 1, bgOp: 0},
+		"ALAJUELA": {color: "#FCD0A1", weight: 1, bgOp: 0},
+		"HEREDIA": {color: "#FF817B", weight: 1, bgOp: 0},
+		"LIMON": {color: "#AAC995", weight: 1, bgOp: 0},
+		"GUANACASTE": {color: "#74B09E", weight: 1, bgOp: 0},
+		"PUNTARENAS": {color: "#FEAF91", weight: 1, bgOp: 0},
+		"CARTAGO": {color: "#A690A4", weight: 1, bgOp: 0},
 	}
 	
 	let style = {weight:2};
@@ -53,11 +53,8 @@ function formatoPolys(f) {
 	style.weight = myStyle.weight;
 	style.dashArray = myStyle.dashes;
 
-	if(myStyle.icon != undefined && settings.areaIconos)
-		style.fill = `url(polyicos/${ myStyle.icon })`;
-
-	// if(myStyle.bgOp != undefined)
-	// 	style.fillOpacity = myStyle.bgOp;
+	if(myStyle.bgOp != undefined)
+		style.fillOpacity = myStyle.bgOp;
 
 	return style;
 }
@@ -81,18 +78,32 @@ function modifFeatures(f,l) {
 		l.options.icon = iconoPuntos(f);
 		l.options.title = f.properties.name;
 
-		if(f.properties.name != undefined)
-			l.bindPopup(f.properties.name, {offset:[0,-32]});
+		if(f.properties.NOMBRE != undefined || f.properties.NOMBRE_REC != undefined) {
+			var nom = f.properties.NOMBRE != undefined? f.properties.NOMBRE : f.properties.NOMBRE_REC;
+			var suffix = ""
+
+			if(f.properties.valor_fallamiento != null) {
+				var magnitud = f.properties.valor_fallamiento;
+				var clasificacion = "moderado";
+				if(magnitud >= 4) clasificacion = "fuerte";
+				if(magnitud >= 5) clasificacion = "peligroso";
+
+				suffix = `<br> <b style="color: color-mix(in srgb, yellow, red ${(magnitud-3.5) * 100 + 10}%); background: white;">MAGNITUD: ${magnitud.toFixed(1)} (${clasificacion})<b>`
+			}
+
+			l.bindPopup(`${nom} ${suffix}`, {offset:[0,-32]});
+
 			l.on("mouseover", function(){this.openPopup()});
 			l.on("mouseout", function(){this.closePopup()});
-
-		if(!settings.markers) {
-			l.options.opacity = 0;
 		}
+
+		// if(!settings.markers) {
+		// 	l.options.opacity = 0;
+		// }
 	}
 }
 
-const pixelIcoSize = 40;
+const pixelIcoSize = 25;
 var pixelIcono = L.Icon.extend({options:{
 	iconSize:[pixelIcoSize,pixelIcoSize], 
 	iconAnchor:[pixelIcoSize/2,pixelIcoSize],
@@ -103,30 +114,14 @@ var pixelIcono = L.Icon.extend({options:{
 function iconoPuntos(f) {
 	const markIconos = {
 		// agua
-		storage_tank: new pixelIcono({iconUrl:"markers/water_tank.png"}),
-		wastewater_plant: new pixelIcono({iconUrl:"markers/water_treatment.png"}),
-		water_well: new pixelIcono({iconUrl:"markers/water_well.png"}),
-	
-		// postes de luz
-		mast: L.icon({iconUrl:"markers/light.png", iconSize:[50,50], iconAnchor:[25,50]}),
-	
-		// edificios
-		place_of_worship: new pixelIcono({iconUrl:"markers/church.png"}),
-		park: new pixelIcono({iconUrl:"markers/park.png"}),
-		dog_park: new pixelIcono({iconUrl:"markers/dog_park.png"}),
-		pitch: new pixelIcono({iconUrl:"markers/leisure.png"}),
-
-		// place
-		neighbourhood: new pixelIcono({iconUrl:"markers/neighborhood.png"}),
-
-
-		default: new pixelIcono({iconUrl:"markers/default.png"}),
+		escuela: new pixelIcono({iconUrl:"markers/escuelas.png"}),
+		gasolinera: new pixelIcono({iconUrl:"markers/gasolineras.png"}),
 	};
 
 	let style = {};
 	// sacamos los datos que existan dependiendo del tipo de punto
-	let llave = f.properties.building ?? f.properties.leisure ?? 
-				f.properties.amenity ?? f.properties.man_made ?? f.properties.place;
+	let llave = (f.properties.NOMBRE != undefined? "escuela" : null) ??
+				(f.properties.NOMBRE_REC != undefined? "gasolinera" : null);
 
 	style.icon = markIconos[llave];
 	return style.icon ?? markIconos.default;

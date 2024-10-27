@@ -2,11 +2,14 @@ html, body {
 	/* para que quepa todo el mapa */
 	margin: 0px;
 	padding: 0px;
+	height:100vh;
+	width:100vw;
+
+	font-family: monospace;
 }
 
-
-/* GENERAL */
-#tec-logo {
+/* pone el logo del tec en una esquina */
+#tec-logo { 
 	position: fixed;
 	top: 0px;
 	right: 0px;
@@ -18,14 +21,31 @@ html, body {
 	pointer-events:none;
 }
 
-svg {
-	shape-rendering: crispEdges;
-	image-rendering: pixelated;
+.content-wrapper {
+	display: flex;
+	flex-direction: column;
+	position:relative;
+	/* justify-content: space-between; */
+
+	width: 100%;
+	height: 100%;
 }
-#map {
-	background-color: #f0f0f0;
-	image-rendering: pixelated;
+
+.map-wrapper {
+	flex-grow: 1;
+	height: 100%;
+
+	#map {
+		background-color: #f0f0f0;
+		image-rendering: pixelated;
+	}
+	svg {
+		shape-rendering: crispEdges;
+		image-rendering: pixelated;
+	}
 }
+
+
 
 /* DIVICONS */
 #map .leaflet-div-icon {
@@ -47,138 +67,185 @@ svg {
 	}
 }
 
-/* TAB DE OPCIONES */
-#opciones {
-	position:fixed;
-	bottom:1rem;
-	left:-14rem;
-
-	width:16rem;
-	height:2rem;
-	padding:0;
-	overflow:hidden;
-	
-	background-color: white;
-	border:2px solid gray;
-	border-radius: 0 .5rem .5rem 0;
-
-	/* animacion de cerrar */
-	transition: height .2s, left .2s .2s;
-
-	/* Tiene un wrapper porque me da pereza ordenarlo bien */
-	div {
-		position: relative;
-		margin: 0px;
-		padding: 0px;
-	}	
-}
-
-#opciones p {
-	margin-left: 1.5rem;
-
+/* TABS DE MAPAS */
+#mapas-tab {
+	padding: 0;
+	height: calc(35vw + 1.5rem);
 	color: gray;
-	opacity: 0;
-	font-family: consolas;
-	pointer-events: none;
 	
-	transition: opacity .3s;
-
-	span {
-		cursor:help;
-		pointer-events: all;
-	}
-	input {
-		vertical-align: text-bottom;
-		cursor: pointer;
-		pointer-events: all;
-	}
-}
-
-#opciones h1 {
-	margin-left: 1.5rem;
-
-	color:#686868;
-	font-family: consolas;
-	font-size: 1.1rem;
-}
-
-#opciones button {
-	width: 13.8rem;
-	margin-left: 1.5rem;
-
-	color:white;
-	background-color: rgb(177, 177, 177);
-	font-size: 1rem;
-	font-family: consolas;
-	border: none;
-	border-radius: .2rem;
+	overflow:hidden;
+	background-color: rgb(249, 249, 249);
 	
-	&:hover {
-		background-color: gray;
-	}
-
-	&:active {
-		background-color: rgb(51, 50, 50);
-	}
-}
-
-/* animaciones cuando hace check */
-#opciones:has(#show-opciones:checked) {
-	height:10rem;
-	left:-1rem;
-
-	transition: height .2s .2s, left .2s;
-
-	p {
-		opacity: 1;
-	}
-}
-
-/* si no cabe no lo mostramos */
-@media screen and (max-width: 16rem) {
-	#opciones {visibility: hidden;}
-}
-
-/* checkbox */
-#show-opciones {
-	position:absolute;
-	right: 0px;
-	top: 0px;
-
-	margin: 0;
-	width: 2rem;
-	height: 2rem;
-
-	-webkit-appearance: none;
-	appearance: none;
-}
-
-/* anims */
-#show-opciones:hover + #show-icono {
-	transform: rotate(90deg) scale(1.1);
-}
-#show-opciones:checked + #show-icono {
-	transform: rotate(360deg);
-	background-image: url(imagenes/close.png);
-}
-
-#show-icono {
-	position:absolute;
-	right: 0px;
-	top: 0px;
-
-	display: block;
-	margin: 0;
-	width: 2rem;
-	height: 2rem;
-
-	border:0;
-	outline: none;
-	background-image: url(imagenes/settings.png);
-
-	pointer-events: none;
 	image-rendering: pixelated;
+	transition: height .1s;
 
-	/* Animar el giro cool cuando se abre / cierra */
-	transition: transform .6s, background-image .4s allow-discrete;
+	.mapas-tab-show-wrapper {
+		position:relative;
+		margin: 0;
+		padding: 0;
+		height: 1.5rem;
+		text-align: center;
+		vertical-align: middle;
+
+		background-color: white;
+		border-top: 2px solid rgb(202, 202, 202);
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+		span {
+			display: block;
+			position:absolute;
+			text-align: center;
+			width: 100%;
+			height: 100%;
+			top: 0px;
+		}
+		a {
+			display: block;
+			position: absolute;
+			left: 5px;
+			top: 0px;
+		}
+		#show-mapas {
+			display: block;
+	
+			margin: 0;
+			height: 100%;
+			width: 100%;
+	
+			opacity: 0;
+		}
+	}
+
+	.mapas-tab-opciones-wrapper {
+		padding: 0;
+		display:flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 800;
+		overflow: hidden;
+		flex-flow: wrap;
+		height: 100%;
+		
+		.opcion-mapa {
+			color:#9f9f9f;
+			position: relative;
+			width: 20vw;
+			height: 100%;
+			padding-top: .5rem;
+			padding-left: .5rem;
+			padding-right: .5rem;
+			text-align: center;
+			
+			font-size: 1.67vw;
+
+			input[type="radio"] {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+
+				opacity: 0;
+			}
+
+			img {
+				width: 100%;
+				border-radius: 1rem;
+				border: 2px solid white;
+
+				box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+				filter: grayscale(100%) contrast(60%);
+
+				transition: filter .5s;
+				padding-top: .5rem;
+			}
+
+			span {
+				width: 100%;
+				position:absolute;
+				top: 15px;	
+				left: 0px;
+				color: white;
+			}
+
+		}
+
+		.opcion-mapa:has(input[type="radio"]:checked) {
+			color:gray;
+			img {
+				filter: none;
+			}
+		}
+	}
+
+
+	&:has(#show-mapas:checked) {
+		height: 1.5rem;
+	}
+
+
+}
+
+@media screen and (min-width: 32rem) {
+	#mapas-tab {
+
+		height: 15rem;
+		overflow:hidden;
+		
+			
+		.mapas-tab-show-wrapper {
+			height: 1.5rem;
+	
+			span {
+				display: block;
+				position:absolute;
+				text-align: center;
+				width: 100%;
+				top: 0px;
+			}
+			#show-mapas {
+				display: block;
+		
+				margin: 0;
+				height: 100%;
+				width: 100%;
+		
+				opacity: 0;
+			}
+		}
+	
+		.mapas-tab-opciones-wrapper {
+			.opcion-mapa {
+				width: 6rem;
+				height: 100%;
+				text-align: center;
+				font-weight: 600;
+
+				padding-top: 1rem;
+				padding-left: 1rem;
+				padding-right: 1rem;
+
+				font-size: inherit;
+
+				img {
+					padding-top: 0;
+				}
+
+				span {
+					position:initial;
+					color: inherit;
+				}
+			}
+		}
+	
+	
+		&:has(#show-mapas:checked) {
+			height: 1.5rem;
+		}
+	
+	}
+}
+
+.leaflet-image-layer {
+	z-index: -1000;
 }
