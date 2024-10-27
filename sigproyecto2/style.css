@@ -70,7 +70,7 @@ html, body {
 /* TABS DE MAPAS */
 #mapas-tab {
 	padding: 0;
-	height: calc(35vw + 1.5rem);
+	height: 1.5rem;
 	color: gray;
 	
 	overflow:hidden;
@@ -180,7 +180,7 @@ html, body {
 
 
 	&:has(#show-mapas:checked) {
-		height: 1.5rem;
+		height: calc(35vw + 1.5rem);
 	}
 
 
@@ -189,7 +189,7 @@ html, body {
 @media screen and (min-width: 32rem) {
 	#mapas-tab {
 
-		height: 15rem;
+		height: 1.5rem;
 		overflow:hidden;
 		
 			
@@ -240,7 +240,7 @@ html, body {
 	
 	
 		&:has(#show-mapas:checked) {
-			height: 1.5rem;
+			height: 15rem;
 		}
 	
 	}
