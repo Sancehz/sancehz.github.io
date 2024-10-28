@@ -39,6 +39,7 @@ Lnaweisu (2013). _Leaflet Polygon Fill Pattern (v0.7)_.
 > _Ultima Actualizacion: 10/27/2024 - 7PM_
 
 Visible en https://sancehz.github.io/sigproyecto2
+
 Descargables:
 - https://github.com/Sancehz/sancehz.github.io/releases/tag/v.1.0.0-proyecto-2
 
