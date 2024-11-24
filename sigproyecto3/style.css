@@ -1,0 +1,28 @@
+html, body {
+	/* para que quepa todo el mapa */
+	margin: 0px;
+	padding: 0px;
+}
+
+
+/* GENERAL */
+#tec-logo {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+
+	width: 20vw;
+	margin:1rem;
+
+	opacity: .5;
+	pointer-events:none;
+}
+
+svg {
+	shape-rendering: crispEdges;
+	image-rendering: pixelated;
+}
+#map {
+	background-color: #f0f0f0;
+	image-rendering: pixelated;
+}
