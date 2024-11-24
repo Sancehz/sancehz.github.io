@@ -8,6 +8,6 @@ var map = L.map(
 	}
 );
 
-L.tileLayer('https://sancehz.github.io/sigproyecto3/tiles/{z}/{x}/{y}.png', {
+L.tileLayer('http://sancehz.github.io/sigproyecto3/tiles/{z}/{x}/{y}.png', {
     attribution: ''
 }).addTo(map);
