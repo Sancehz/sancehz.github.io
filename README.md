@@ -58,4 +58,37 @@ Lnaweisu (2013). _Leaflet Polygon Fill Pattern (v0.7)_.
 
 ---
 </details>
+
+<br>
+
+## Proyecto 3: Mapas de Mosaico - Liberia Costa Rica
+> _Ultima Actualizacion: 11/24/2024 - 10PM_
+
+Visible en https://sancehz.github.io/sigproyecto3
+
+<details>
+ <summary>
+  <i>Ver detalles</i>
+ </summary>
+ 
+### Recursos
+Agafonkin, V. (2010). *Leaflet: An open-source JavaScript library for interactive maps.* Leaflet.
+ - https://leafletjs.com/reference.html
+
+GRASS GIS Team. (2024). *GRASS GIS: Bringing advanced geospatial technologies to the world.*
+ - https://grass.osgeo.org/
+
+OpenStreetMap contributors. (2024). *Mapa del canton de Liberia, Costa Rica.* OpenStreetMap. 
+ - https://www.openstreetmap.org/  
+
+Tardie, J. (2017). *MButil: Importer and Exporter of MBTiles.* MButil.
+ - https://github.com/mapbox/mbutil
+
+TileMill Project. (2019). *TileMill is a modern map design studio.* TileMill.
+ - https://tilemill-project.github.io/tilemill/
+
+---
 </details>
+
+
+
