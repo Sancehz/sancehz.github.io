@@ -9,7 +9,7 @@
 ## Proyecto 1: Mapa del Condominio Florencia
 > _Ultima Actualizacion: 9/19/2024 - 6PM_
 
-Visible en https://sancehz.github.io/
+Visible en https://sancehz.github.io/sigproyecto1
 
 <i><b>Nota importante:</b> El archivo <code><a href="https://github.com/Sancehz/sancehz.github.io/blob/main/index.html">index.html</a></code> fue modificado accidentalmente al actualizar el archivo <code>index.html</code> correspondiente al proyecto 2, los cambios han sido revertidos a la version anterior, pero si desea revisar la integridad de esta correccion el archivo puede ser comparado con el <code>index.html</code> original del commit <a href="https://github.com/Sancehz/sancehz.github.io/tree/8a1a07a038d157a7122f9aca8b0a79bed83caf6f">#8a1a07a
 </a></i><br>
