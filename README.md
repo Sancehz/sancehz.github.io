@@ -2,6 +2,39 @@
 
 <details open>
 <summary>
+<h1> Visualizacion de Informacion - TEC </h1>
+</summary>
+
+## Proyecto 1: EDA - Salud del Corazon
+> _Ultima Actualizacion: 9/05/2025 - 9PM_
+
+Visible en https://sancehz.github.io/visproyecto1
+
+<br>
+
+
+<details open>
+ <summary>
+  <i>Ver detalles</i>
+ </summary>
+
+### Referencias
+- Chen Y., Vaccarino V., Williams C., Butler J., Berkman L. & Krumholz H. (1999) Risk factors for heart failure in the elderly: a prospective community-based study. *The American Journal of Medicine.* [doi.org/10.1016/S0002-9343(99)00126-6](https://doi.org/10.1016/S0002-9343(99)00126-6)
+
+- Pearson T. (1996) Alcohol and Heart Disease. *American Heart Association Journals.* [doi.org/10.1161/01.CIR.94.11.3023](https://doi.org/10.1161/01.CIR.94.11.3023)
+
+- Stern S., Behar S. & Gottlieb S. (2003) Aging and Diseases of the Heart. *American Heart Association Journals.* [doi.org/10.1161/01.CIR.0000086898.96021.B9](https://doi.org/10.1161/01.CIR.0000086898.96021.B9)
+
+- Wirtz P. & von Känel R. (2017) Psychological Stress, Inflammation, and Coronary Heart Disease. *Curr Cardiol Rep.* [doi.org/10.1007/s11886-017-0919-x](https://doi.org/10.1007/s11886-017-0919-x)
+
+---
+
+</details>
+
+</details>
+
+<details>
+<summary>
 <h1> Sistemas de Informacion Geografica - TEC </h1>
 </summary>
 
