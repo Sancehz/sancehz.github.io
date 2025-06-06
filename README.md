@@ -13,7 +13,7 @@ Visible en https://sancehz.github.io/visproyecto1
 <br>
 
 
-<details open>
+<details>
  <summary>
   <i>Ver detalles</i>
  </summary>
@@ -30,6 +30,28 @@ Visible en https://sancehz.github.io/visproyecto1
 ---
 
 </details>
+
+## Proyecto 2: Visualizacion - Ingenieria Forestal 
+> _Ultima Actualizacion: 6/06/2025 - 5PM_
+
+Visible en https://sancehz.github.io/visproyecto2
+
+<br>
+
+
+<details open>
+ <summary>
+  <i>Ver detalles</i>
+ </summary>
+
+### Anexos
+- https://www.tec.ac.cr/ingenieria-forestal
+- https://www.tec.ac.cr/licenciatura-ingenieria-forestal-enfasis-manejo-produccion-forestal
+
+---
+
+</details>
+
 
 </details>
 
@@ -68,6 +90,7 @@ Lnaweisu (2013). _Leaflet Polygon Fill Pattern (v0.7)_.
 </details>
 
 <br>
+
 
 ## Proyecto 2: Mapas de Calor - Temblores en CR
 > _Ultima Actualizacion: 10/27/2024 - 7PM_
