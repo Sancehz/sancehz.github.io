@@ -67,6 +67,7 @@ Visible en https://sancehz.github.io/visproyecto3
 
 ### Anexos
 - https://tecdigital.tec.ac.cr/dotlrn/classes/CA/IC8056/S-1-2025.CA.IC8056.1/file-storage/view/Apuntes%2F2022_AnalisisSentimientos.pdf
+- https://web.seducoahuila.gob.mx/biblioweb/upload/Wilde,%20Oscar%20-%20El%20Joven%20Rey%20(1).pdf
 ---
 
 </details>
