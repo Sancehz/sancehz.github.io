@@ -52,6 +52,25 @@ Visible en https://sancehz.github.io/visproyecto2
 
 </details>
 
+## Proyecto 3: Visualizacion - Texto "El Joven Rey" 
+> _Ultima Actualizacion: 6/30/2025 - 8PM_
+
+Visible en https://sancehz.github.io/visproyecto3
+
+<br>
+
+
+<details open>
+ <summary>
+  <i>Ver detalles</i>
+ </summary>
+
+### Anexos
+- https://tecdigital.tec.ac.cr/dotlrn/classes/CA/IC8056/S-1-2025.CA.IC8056.1/file-storage/view/Apuntes%2F2022_AnalisisSentimientos.pdf
+---
+
+</details>
+
 
 </details>
 
