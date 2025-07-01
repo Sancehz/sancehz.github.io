@@ -39,7 +39,7 @@ Visible en https://sancehz.github.io/visproyecto2
 <br>
 
 
-<details open>
+<details>
  <summary>
   <i>Ver detalles</i>
  </summary>
